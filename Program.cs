@@ -39,6 +39,7 @@ namespace RatingSystem
                     Console.WriteLine("5.Entertainment");
                     Console.Write("Enter your Rate:");
                     Console.ReadLine();
+                    Console.WriteLine("Thank u for rating us!!");
                     
                     break;
                 }
