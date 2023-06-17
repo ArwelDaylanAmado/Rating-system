@@ -19,27 +19,31 @@ namespace RatingSystem
 
                 if (result == "correct")
                 {
+                    int num1, num2, num3, num4, num5, Total;
+
                     Console.WriteLine("Rate the following from 1 as lowest and 5 as highest");
                     Console.WriteLine("1.Services");
                     Console.Write("Enter your Rate:");
-                    Console.ReadLine();
+                    num1 = Convert.ToInt32(Console.ReadLine());
                     
                     Console.WriteLine("2.Foods");
                     Console.Write("Enter your Rate:");
-                    Console.ReadLine();
+                    num2 = Convert.ToInt32(Console.ReadLine());
                     
                     Console.WriteLine("3.Cleanliness of the hotel");
                     Console.Write("Enter your Rate:");
-                    Console.ReadLine();
+                    num3 = Convert.ToInt32(Console.ReadLine());
                     
                     Console.WriteLine("4.Cleanliness of the room");
                     Console.Write("Enter your Rate:");
-                    Console.ReadLine();
+                    num4 = Convert.ToInt32(Console.ReadLine());
                     
                     Console.WriteLine("5.Entertainment");
                     Console.Write("Enter your Rate:");
-                    Console.ReadLine();
-                    Console.WriteLine("Thank u for rating us!!");
+                    num5 = Convert.ToInt32(Console.ReadLine());
+
+                    Total = (num1 + num2 + num3 + num4 + num5) / 5;
+                    Console.WriteLine("rating total:" +Total );
                     
                     break;
                 }
