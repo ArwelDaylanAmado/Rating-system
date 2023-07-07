@@ -57,9 +57,9 @@ namespace RatingSystem
 
         static void DisplayListContents()
         {
-            foreach (var book in hotelnames)
+            foreach (var hotel in hotelnames)
             {
-                Console.WriteLine(book);
+                Console.WriteLine(hotel);
             }
         }
     }
