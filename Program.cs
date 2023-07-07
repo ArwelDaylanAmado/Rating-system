@@ -1,62 +1,66 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RatingSystem
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        static List<string> hotelnames = new List<string>();
+        static void Main(string[] args)
         {
-            string Hotel = "Laguna Hotel";
-            
-            Console.WriteLine("Rating system of Laguna Hotel");
-            Console.Write("Enter Name of hotel:");
+            hotelnames.Add("San Pedro Hotel");
+            hotelnames.Add("Manila Hotel");
+            hotelnames.Add("Santa Rosa Hotel");
 
-            string? userInput = Console.ReadLine();
+            Console.WriteLine("Hotel names: ");
+            DisplayListContents();
 
-            while(userInput != "0")
+            Console.Write("\nEnter the hotel that you want to rate: ");
+            var searchhotel = Console.ReadLine();
+            var result = hotelnames.Find(x => x == searchhotel);
+
+            if (result != null)
             {
-                string result = userInput == Hotel ? "correct" : "error";
-
-                if (result == "correct")
-                {
-                    int num1, num2, num3, num4, num5, Total;
+                double num1, num2, num3, num4, num5, Total;
 
                     Console.WriteLine("Rate the following from 1 as lowest and 5 as highest");
                     Console.WriteLine("1.Services");
                     Console.Write("Enter your Rate:");
-                    num1 = Convert.ToInt32(Console.ReadLine());
+                    num1 = Convert.ToDouble(Console.ReadLine());
                     
                     Console.WriteLine("2.Foods");
                     Console.Write("Enter your Rate:");
-                    num2 = Convert.ToInt32(Console.ReadLine());
+                    num2 = Convert.ToDouble(Console.ReadLine());
                     
                     Console.WriteLine("3.Cleanliness of the hotel");
                     Console.Write("Enter your Rate:");
-                    num3 = Convert.ToInt32(Console.ReadLine());
+                    num3 = Convert.ToDouble(Console.ReadLine());
                     
                     Console.WriteLine("4.Cleanliness of the room");
                     Console.Write("Enter your Rate:");
-                    num4 = Convert.ToInt32(Console.ReadLine());
+                    num4 = Convert.ToDouble(Console.ReadLine());
                     
                     Console.WriteLine("5.Entertainment");
                     Console.Write("Enter your Rate:");
-                    num5 = Convert.ToInt32(Console.ReadLine());
+                    num5 = Convert.ToDouble(Console.ReadLine());
 
                     Total = (num1 + num2 + num3 + num4 + num5) / 5;
                     Console.WriteLine("rating total:" +Total );
                     
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Name not found");
-                    Console.WriteLine("Please try again");
-
-                    Console.Write("Enter Name of hotel:");
-                    userInput = Console.ReadLine();
-                }
             }
+            else
+            {
+                Console.WriteLine("Name not found");
+                Console.WriteLine("Please try again");
+            }
+        }
 
+        static void DisplayListContents()
+        {
+            foreach (var book in hotelnames)
+            {
+                Console.WriteLine(book);
+            }
         }
     }
 }
